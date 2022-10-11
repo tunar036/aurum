@@ -1,0 +1,77 @@
+#compare{
+    .compare-section{
+        @include grid-box(repeat(auto-fill, minmax(300px,1fr)),dense, 0px);
+        .compare-categories{
+            .filter-category{
+                border-radius:6px;
+                padding: $p28 $p16;
+                background-color: $gray100;
+                .filter-title{
+                    padding-bottom: $p16;
+                    @include flex-box(space-between,center);
+                    @include myfont($SF_Pro, normal, 800, 20px, 32px, $black);
+                }
+                .filter-categories{
+                    display: flex;
+                    max-height: 180px;
+                    overflow-y: scroll;
+                    flex-direction: column;
+                    .category-link{
+                        margin-bottom: $p16;
+                        transition: .2s ease-in-out;
+                        @include myfont($SF_Pro, normal, 400, 14px, 20px, $gray900);
+                        &:hover{
+                            color: $main_green;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+            #filterCategories::-webkit-scrollbar{
+                border-radius: 4px;
+                left: 10px;
+                width: 4px;
+                background-color: #E2E8F0;
+            }
+            #filterCategories::-webkit-scrollbar-thumb{
+                border-radius: 4px;
+                padding: 0 0 0 15px;
+                background-clip: padding-box;
+                background: #94A3B8;
+            }
+            &:last-child{
+                border-bottom: 0;
+            }
+        }
+        .compared-products{
+            overflow-x: auto;
+            padding-left: 46px;
+            grid-column: span 3;
+            @include flex-box(initial,normal);
+            &::-webkit-scrollbar{
+                width: 0;
+                height: 0;
+            }
+            .product-params{
+                justify-content: flex-end;
+            }
+        }
+    }
+    .compared-products_info{
+        margin: $p56 0;
+        .compared-products_title{
+            @include myfont($SF_Pro, normal, 600, 28px, 32px, $black);
+        }
+        table{
+            margin-top: $p28;
+            tr{
+                @include flex-box(initial,center);
+                overflow-x: auto;
+                &::-webkit-scrollbar{
+                    width: 0;
+                    height: 0;
+                }
+            }
+        }
+    }
+}

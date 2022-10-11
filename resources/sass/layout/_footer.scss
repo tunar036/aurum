@@ -1,0 +1,49 @@
+footer{
+    padding: $p36 0 $p56 0;
+    @include sm-screen{
+        padding: $p32 0;
+    }
+    .footer-section{
+        @include flex-box(space-between,center);
+        @include sm-screen{
+            flex-direction: column;
+        }
+        .copyright{
+            @include myfont($SF_Pro, normal, 400, 12px, 16px, $black);
+        }
+        .footer-menu{
+            @include flex-box(initial,center);
+            @include sm-screen{
+                display: none;
+            }
+            li{
+                padding:0 $p16;
+                border-right: 1px solid $gray900;
+                &:first-child{
+                    padding-left: 0;
+                }
+                &:last-child{
+                    border-right: none;
+                }
+                a{
+                    @include myfont($SF_Pro, normal, 500, 14px, 16px, $gray900);
+                    &:hover{
+                        color: $main_green;
+                    }
+                }
+            }
+        }
+        .footer-social{
+            @include flex-box(initial,center);
+            @include sm-screen{
+                padding: $p20 0 0 0 ;
+            }
+            a{
+                margin-right: $p24;
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

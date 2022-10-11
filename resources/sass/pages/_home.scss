@@ -1,0 +1,927 @@
+@import '../sections/actions';
+@import '../sections/services';
+@import '../sections/news';
+#category{
+    position: relative;
+    background-color: $main_green;
+    margin: 40px 0 0 0;
+    padding: $p24;
+    @include sm-screen{
+        display: none;
+    }
+    .category-section{
+        @include flex-box(space-between,center);
+    }
+    .categories-button{
+        background-color: $white;
+        padding: 12px 20px;
+        @include md-screen{
+            padding: 12px 10px;
+        }
+        @include border (none, 6px);
+        @include myfont($SF_Pro, normal, 600, 16px, 24px, $dark_green);
+        img{
+            padding-right: $p12;
+            display: none;
+        }
+        svg{
+            margin-right: $p12;
+            display: none;
+        }
+    }
+    .search{
+        grid-column: span 2;
+        @include flex-box(initial,center);
+        .search-text{
+            padding-right: $p20;
+            @include myfont($SF_Pro, normal, 500, 16px, 24px, $white);
+        }
+        .search-form{
+            width: 648px;
+            @include md-screen{
+                width: auto !important;
+            }
+            position: relative;
+            input{
+                width: 100%;
+                outline: none;
+                padding: 12px 16px;
+                @include border(1px solid #E4E8EE, 6px);
+                @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray);
+            }
+            button{
+                border: none;
+                background-color: $white;
+                position: absolute;
+                right: 0;
+                padding: 16px;
+                border-left: 1px solid $gray600;
+                margin: 10px 0;
+                padding: 5px 15px;
+            }
+        }
+    }
+}
+.all-categories{
+    display: none;
+    @include border(1px solid #E8ECF1, 0);
+    background-color: $white;
+    width: 292px;
+    max-width: 292px;
+    position: absolute;
+    top: 100%;
+    z-index:99;
+    .category-item{
+        z-index: 2;
+        padding: $p16 $p20;
+        border-bottom: 1px solid #E8ECF1;
+        @include flex-box(space-between,center);
+        p{
+            font-size: 14px;
+        }
+        .all_category-items{
+            max-width: 1000px;
+            @include border(1px solid #E8ECF1, 0);
+            display: none;
+            z-index: 2;
+            padding: $p32 0;
+            background-color: $white;
+            width: 240px;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            a{
+                @include myfont($SF_Pro, normal, 500, 14px, 24px, $black);
+            }
+            .item-title{
+                position: relative;
+                padding: 0 $p32 0 $p32;
+                @include myfont($SF_Pro, normal, 600, 16px, 24px, $dark_green);
+                &:nth-child(n+2){
+                    padding: $p8 $p32 0 $p32;
+                }
+                ul{    
+                    // top: 0;
+                    // width: 200px;
+                    background: white;
+                    li{
+                        padding: 5px 0;
+                        border-bottom: 1px solid #f3f3f3;
+                    }
+                }
+            }
+        }
+    }
+}
+#campaign{
+    padding: $p40 0 0 0;
+    @include xs-screen{
+        padding: 0;
+    }
+    .container{
+        @include sm-screen{
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    .campaign-section{
+        @include grid-box(repeat(auto-fill, minmax(330px,1fr)),dense, 24px);
+        @include md-screen{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .campaign-section_main-offer{
+            @include md-screen{
+                padding: 0 $p20;
+            }
+        }
+    }
+    .offer-timeout{
+        @include flex-box(space-between,center);
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        padding: 14px 24px;
+        background-color: $main_green;
+        .offer-head{
+            @include myfont($SF_Pro, normal, 600, 16px, 24px, $white);
+        }
+        .offer-time{
+            @include flex-box(initial,center);
+            .time{
+                background-color: $white;
+                @include myfont($SF_Pro, normal, 500, 14px, 20px, $gray900);
+                padding: 4px 6px;
+                border-radius: 6px;
+            }
+            span{
+                padding: 0 4px;
+                color: $white;
+            }
+        }
+    }
+    .offer{
+        padding: $p24 $p24 $p16 $p24;
+        @include border(1px solid $main_green, 0);
+        .offer-name{
+            @include flex-box(space-between,center);
+            h5{
+                @include myfont($SF_Pro, normal, 700, 20px, 32px, $black);
+                @include xs-screen{
+                    @include myfont($SF_Pro, normal, 600, 16px, 24px, $black);
+                }
+            }
+            .offer-logo{
+                img{
+                    width: 90px;
+                    height: 24px;
+                    object-fit: contain;
+                }
+            }
+        }
+        .offer-info{
+            padding-top: $p24;
+            @include flex-box(space-between,center);
+            .offer-img{
+                img{
+                    width: 188px;
+                    height: 188px;
+                    object-fit: contain;
+                    @include xs-screen{
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+            .offer-badges{
+                @include flex-box(space-between,flex-end);
+                flex-direction: column;
+                .badge-item{
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+    .offer-price{
+        @include flex-box(space-between,flex-end);
+    }
+    .prices{
+        width: 100%;
+        padding-top: $p16;
+        .discount-price{
+            @include myfont($SF_Pro, normal, 500, 14px, 16px, $gray900);
+            text-decoration:line-through;
+        }
+        .price{
+            padding-top: $p12;
+            @include myfont($SF_Pro, normal, 600, 20px, 16px, $black);
+        }
+    }
+    .offer-carousel{
+        grid-column: span 2;
+        #carouselExampleIndicators{
+            height: 100%;
+            .carousel-inner{
+                height: 100%;
+                .carousel-item{
+                    height: 100%;
+                    img{
+                        border-radius: 6px;
+                        height: 100%;
+                        @include sm-screen{
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+            .carousel-indicators{
+                button{
+                    position: relative;
+                    color: $white;
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+                .pagination-number{
+                    position: absolute;
+                    top: -5px;
+                    left: -20px;
+                }
+            }
+        }
+    }
+}
+#partners{
+    padding: $p52;
+    @include sm-screen{
+        display: none;
+    }
+    .partner-img{
+        width: 126px;
+        height: 76px;
+        object-fit: contain;
+        filter: opacity(0.5);
+    }
+}
+#comparing{
+    .container{
+        position: relative;
+    }
+    .comparing-title{
+        @include myfont($SF_Pro, normal, 600, 20px, 32px, $black);
+        padding: $p24 0 $p12 0;
+        display: none;
+        span{
+            color: $main_green;
+        }
+        @include sm-screen{
+            display: block;
+        }
+    }
+    .comparing-section{
+        position: relative;
+        @include grid-box(repeat(auto-fill, minmax(500px,1fr)),dense, 0px);
+        @include sm-screen{
+            display: flex;
+            flex: 1;
+        }
+        .compared-product{
+            background-color: $gray100;
+            padding: $p32 $p72 $p32 $p32;
+            @include border(1px solid #E4E8EE, 6px);
+            @include flex-box(initial, initial);
+            @include sm-screen{
+                padding: $p24 $p16 $p16 $p16;
+                flex-direction: column;
+            }
+            @include border(1px solid #E4E8EE, 6px);
+            .compared-product_img{
+                img{
+                    width: 188px;
+                    height: 188px;
+                    object-fit: contain;
+                    margin-bottom: 20px;
+                    @include sm-screen{
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+            .compared-product_info{
+                width: 100%;
+                .compared-product_category{
+                    @include myfont($SF_Pro, normal, 500, 16px, 24px, $dark_green);
+                    @include sm-screen{
+                        font-size: 14px;
+                    }
+                }
+                .compared-product_name{
+                    @include myfont($SF_Pro, normal, 700, 24px, 40px, $black);
+                    @include sm-screen{
+                        font-size: 16px;
+                    }
+                }
+                .compared-product_properties{
+                    padding: $p16 0 0 0;
+                    @include sm-screen{
+                        padding: 0;
+                    }
+                    .property{
+                        padding: $p8 0;
+                        @include myfont($SF_Pro, normal, 500, 14px, 24px, $black);
+                        box-shadow: 0px -1px 0px 0px #DEE2E8 inset;
+                        &:last-child{
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+            &:nth-child(2){
+                flex-direction: row-reverse;
+                padding: $p32 $p32 $p32 $p72;
+                @include sm-screen{
+                    flex-direction: column;
+                    padding: $p24 $p16 $p16 $p16;
+                }
+            }
+        }
+        .compare{
+            background-color: $dark_green;
+            color: $white;
+            padding: 20px 22px;
+            @include border(none, 100px);
+            @include sm-screen{
+                position: relative;
+                top:auto;
+                left: auto;
+                grid-column: span 2;
+                @include border(none, 4px);
+                background-color: $main_green;
+                svg{
+                    display: none;
+                }
+            }
+            p{
+                padding-top: 6px;
+                @include myfont($SF_Pro, normal, 600, 14px, 24px, $white);
+            }
+        }
+    }
+    .comparing-section:nth-child(3){
+        display: inline-block;
+        position: absolute;
+        top: 35%;
+        left: 46%;
+        z-index: 2;
+        display: inline-block;
+        @include sm-screen{
+            margin: $p24 0;
+            position: relative;
+            width: 100%;
+            left: auto;
+            .compare{
+                width: 100%;
+                padding: $p12 0;
+            }
+        }
+    }
+}
+#goods,#reccomended-products{
+    padding: $p72 0;
+    @include xs-screen{
+        padding: $p12 0 $p12 0 !important;
+    }
+    .tab-section{
+        @include flex-box(space-between,center);
+        padding-bottom: $p24;
+        .all-products{
+            @include sm-screen{
+                display: none;
+            }
+            a{
+                @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+                margin-right: $p20;
+            }
+            @include flex-box(initial, normal);
+            .swiper-buttons{
+                @include flex-box(initial,center);
+            }
+        }
+    }
+    .swiper-button-next, .swiper-button-prev{
+        position: relative;
+        color: $main_green;
+        left: 0;
+        right: 0;
+        &::after{
+            font-size: 18px;
+        }
+    }
+}
+#reccomended-products{
+    padding: $p72 0 28px 0;
+    .swiper-grid-column>.swiper-wrapper{
+        flex-direction: row;
+    }
+    .product{
+        margin-top: 0 !important;
+    }
+}
+#promo{
+    .promo-section{
+        position: relative;
+        background-color: $dark_green !important;
+        padding: $p20 $p32;
+        @include border(1px solid $main_green,6px);
+        @include flex-box(space-between, center);
+        @include sm-screen{
+            flex-direction: column;
+        }
+        @include xs-screen{
+            padding: $p16;
+        }
+        img{
+            opacity: 10%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+        }
+        .promo-text{
+            @include sm-screen{
+                width: 100%;
+            }
+        }
+        .promo-title{
+            @include myfont($SF_Pro, normal, 500, 20px, 32px, $white);
+        }
+        .promo-subtitle{
+            @include myfont($SF_Pro, normal, 400, 14px, 24px, $white);
+            @include sm-screen{
+                padding-bottom: $p12;
+            }
+            @include xs-screen{
+                @include myfont($SF_Pro, normal, 400, 12px, 20px, $white);
+            }
+        }
+        .add-promo{
+            z-index: 2;
+            height: 100%;
+            padding: $p12 $p32;
+            @include myfont($SF_Pro, normal, 500, 14px, 24px, $dark_green);
+            @include border(none, 4px);
+            background-color: $white;
+            @include sm-screen{
+                width: 100%;
+            }
+        }
+    }
+}
+#random{
+    padding-top: $p52;
+    .random-products{
+        @include grid-box(repeat(auto-fill, minmax(330px,1fr)),dense, 24px);
+        @include xs-screen{
+            display: flex;
+            flex-direction: column;
+        }
+        .random-product{
+            border-radius: 6px;
+            background-color: $gray100;
+            padding: $p32 $p16 $p16 $p32;
+            @include flex-box(space-between,center);
+            @include sm-screen{
+                padding: $p28 $p16 $p16 $p16;
+            }
+            .random-product_info{
+                height: 100%;
+                flex-direction: column;
+                @include flex-box(space-between,normal);
+                .random-product_name{
+                    @include myfont($SF_Pro, normal, 400, 16px, 24px, $gray900);
+                }
+                .random-product_description{
+                    @include myfont($SF_Pro, normal, 700, 24px, 40px, $black);
+                    @include xs-screen{
+                        @include myfont($SF_Pro, normal, 600, 20px, 32px, $black);
+                    }
+                }
+                .random-product_text{
+                    @include myfont($SF_Pro, normal, 400, 16px, 24px, $gray900);
+                }
+                .random-product_price{
+                    .random-product_fee{
+                        @include flex-box(initial,center);
+                        .random-product_real-price{
+                            @include myfont($SF_Pro, normal, 500, 20px, 32px, $primary_red);
+                        }
+                        .random-product_discount-price{
+                            padding-left:$p8;
+                            text-decoration:line-through;
+                            @include myfont($SF_Pro, normal, 400, 16px, 24px, $gray800);
+                        }
+                    }
+                }
+            }
+            .random-product_img{
+                img{
+                    width: 188px;
+                    height: 188px;
+                    object-fit: contain;
+                    @include xs-screen{
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
+}
+#advantageous-categories{
+    padding: $p72 0 0 0;
+    @include xs-screen{
+        padding: $p24 0 0 0;
+    }
+    .advantageous-categories_title{
+        text-align: center;
+        @include myfont($SF_Pro, normal, 500, 32px, 48px, $black);
+        @include xs-screen{
+            @include myfont($SF_Pro, normal, 600, 20px, 32px, $black);
+            text-align: left;
+        }
+        span{
+            color: $main_green;
+        }
+    }
+    .preffered-categories{
+        padding:$p32 0 $p52 0;
+        border-bottom: 1px solid $gray300;
+        @include grid-box(repeat(auto-fill, minmax(250px,1fr)),dense, 24px);
+        @include xs-screen{
+            @include grid-box(repeat(auto-fill, minmax(200px,1fr)),dense, 17px);
+            padding: 12px 0 32px 0;
+            border-bottom: 0;
+        }
+        @include xxs-screen{
+            @include grid-box(repeat(auto-fill, minmax(150px,1fr)),dense, 17px);
+        }
+        @include s-screen{
+            @include grid-box(repeat(auto-fill, minmax(120px,1fr)),dense, 17px);
+        }
+        .preffered-catefory{
+            img{
+                width: 100%;
+                height: 244px;
+                object-fit: cover;
+                border-radius: 4px;
+                @include xs-screen{
+                    height: 124px;
+                }
+            }
+            p{
+                padding-top: $p20;
+                text-align: center;
+                @include myfont($SF_Pro, normal, 500, 16px, 24px, $black);
+                @include xs-screen{
+                    padding-top: $p4;
+                    @include myfont($SF_Pro, normal, 500, 14px, 24px, $black);
+                }
+            }
+            &:last-child{
+                grid-column: span 2;
+                .preffered-catefory{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+#custom-categories{
+    padding-top: $p52;
+    @include xs-screen{
+        padding-top: 0;
+    }
+    .custom-categories_section{
+        @include flex-box(space-between, center);
+        @include xs-screen{
+            @include flex-box(initial, center);
+            flex-direction: column;
+        }
+        .custom-category{
+            padding: $p32 $p16;
+            @include flex-box(initial,normal);
+            @include border(1px solid $gray300, 6px);
+            @include xs-screen{
+                width: 100%;
+                padding: $p16;
+                align-items: center;
+            }
+            .custom-category_img{
+                img{
+                    width: 180px;
+                    height: 180px;
+                    object-fit: contain;
+                    @include xs-screen{
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+            .custom-category_info{
+                padding-left: $p20;
+                @include flex-box(space-between, normal);
+                flex-direction: column;
+                .custom-category_title{
+                    @include myfont($SF_Pro, normal, 600, 20px, 32px, $black);
+                }
+                .custom-category_subcategories{
+                    .custom_subcategory{
+                        display: block;
+                        @include myfont($SF_Pro, normal, 4  00, 14px, 24px, $gray900);
+                        transition: all 0.3s ease;
+
+                        &:hover{
+                            color: $main_green;
+                        }
+                    }
+                }
+                .all-subcategories{
+                    color: $main_green;
+                    // @include flex-box(center,center);
+                    @include myfont($SF_Pro, normal, 600, 14px, 24px, $main_green);
+                    svg{
+                        margin-left: $p12;
+                    }
+                }
+            }
+        }
+    }
+}
+#services{
+    padding:$p72 0;
+    @include xs-screen{
+        padding:$p32 0;
+    }
+    .services-section{
+        @include grid-box(repeat(auto-fill, minmax(250px,1fr)),dense, 50px);
+        @include xs-screen{
+            @include grid-box(repeat(auto-fill, minmax(250px,1fr)),dense, 16px);
+        }
+        .service{
+            @include flex-box(center, center);
+            flex-direction: column;
+            .service-icon{
+                img{
+                    width: 50px;
+                    height: 64px;
+                    object-fit: contain;
+                }
+            }
+            .service-name{
+                padding-top: $p8;
+                @include myfont($SF_Pro, normal, 600, 20px, 32px, $black);
+            }
+            .service-description{
+                text-align: center;
+                @include myfont($SF_Pro, normal, 300, 14px, 24px, $gray900);
+            }
+        }
+    }
+}
+#subscribe{
+    z-index: 2;
+    overflow: hidden;
+    position:relative;
+    padding: $p32 0;
+    background-color: $main_green;
+    .subscribe-section{
+        z-index: 2;
+        @include flex-box(initial,center);
+        @include sm-screen{
+            flex-direction: column;
+        }
+        .subscribe-text{
+            @include myfont($SF_Pro, normal, 400, 20px, 32px, $white);
+        }
+        .subscribe-form{
+            width: 720px;
+            position: relative;
+            margin-left: 100px;
+            @include sm-screen{
+                margin-top: $p20;
+                margin-left: 0;
+                width: 100%;
+            }
+            .subscribe-input{
+                width: 100%;
+                outline: none !important;
+                padding: $p16 $p20 $p16 $p52;
+                @include border(none, 4px);
+                @include myfont($SF_Pro, normal, 500, 14px, 24px, $gray600);
+            }
+            .envelope{
+                position: absolute;
+                padding: 22px 20px;
+                left:0;
+            }
+            button{
+                background-color: $white;
+                position: absolute;
+                padding: 18px 14px;
+                right: 0px;
+                @include border(none, 0);
+            }
+        }
+        .component{
+            position: absolute;
+            right: 3%;
+            top: -20%;
+            width: 20%;
+            z-index: 1;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.active-icon{
+    display: inline-block !important;
+}
+.active-menu{
+    display: block !important;
+}
+.active-elements{
+    display: flex !important;
+}
+.active-products{
+    display: block !important;
+}
+.active-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "left left right_top"
+        "left left right_bottom";
+    @include sm-screen{
+        @include flex-box(initial, center);
+        flex-direction: column;
+    }
+}
+.mySwiper2,.mySwiper3{
+    display: none;
+}
+.active-blog,.active-popular{
+    color: $main_green !important;
+}
+.modal,.modal2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1222222; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+
+.all-credits_section{
+    width:60%;
+    border-radius:6px;
+    padding: $p24 $p32;
+    background-color: $white;
+    .all-credits_title{
+        padding-bottom: $p16;
+        @include flex-box(space-between,center);
+        h4{
+            @include myfont($SF_Pro, normal, 400, 24px, 32px, $black);
+        }
+    }
+}
+.all-credits{
+    @include grid-box(repeat(auto-fill, minmax(150px,1fr)),dense, 20px);
+    .credit-link{
+        @include border(1px solid $gray600, 6px);
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+.modal-content2{
+    top: 0;
+    width: 60%;
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+/* Modal Content */
+.modal-content,.modal-content2 {
+    padding: 100px 0;
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+/* The Close Button */
+.close{
+    color: $black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close2 {
+    color: $black;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 10px;
+    @include border(1px solid $gray300, 100%)
+}
+.close:hover,
+.close:focus,.close2:hover,
+.close2:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+  
+.modal-header,.modal-header2 {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+  
+.modal-body {padding: 2px 16px;}
+  
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+
+.current_language{
+    padding-bottom: $p16;
+    @include flex-box(initial, center);
+    @include myfont($SF_Pro, normal, 300, 16px, 24px, $black);
+    img{
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+    }
+}
+
+.languages-title{
+    h3{
+        @include myfont($SF_Pro, normal, 500, 24px, 40px, $black);
+    }
+    p{
+        @include myfont($SF_Pro, normal, 400, 14px, 20px, $black);
+    }
+    padding-bottom: 12px;
+}
+
+.languages-list{
+    display: flex;
+    flex-direction: column;
+    a{
+        padding: $p12 0;
+        box-shadow: 0px -1px 0px 0px #E8ECF1 inset;
+        @include myfont($SF_Pro, normal, 300, 20px, 32px, $black);
+        &:last-child{
+            box-shadow: none;
+        }
+    }
+    .active-language{
+        color: $black;
+    }
+}

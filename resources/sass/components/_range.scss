@@ -1,0 +1,41 @@
+
+.irs-grid-pol.small{
+    display: none;
+}
+
+.irs--flat .irs-bar, .irs--flat .irs-line{
+    height: 4px !important;
+    background-color: $gray300;
+}
+
+.irs--flat .irs-bar{
+    background-color: $gray900 !important;
+}
+
+.irs--flat .irs-handle>i:first-child{
+    cursor: pointer;
+    background-color: $gray900 !important;
+}
+
+.irs-to, .irs-from, .irs-max{
+    display: none !important;
+}
+
+.irs--flat .irs-handle>i:first-child{
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 100%;
+    top: -25% !important;
+}
+
+.irs-grid-pol{
+    background-color: $gray900 !important;
+}
+
+.irs--flat .irs-grid-text{
+    @include myfont($SF_Pro, normal, 400 !important, 10px !important, 12px, $black !important) ;
+}
+
+.irs-with-grid{
+    width: 80% !important;
+}

@@ -1,0 +1,36 @@
+#blogDetail{
+    flex-direction: column;
+    @include flex-box(center,center);
+    .blog-detail{
+        max-width: 872px;
+        .blog-detail_name{
+            padding-bottom: $p20;
+            @include myfont($SF_Pro, normal, 600, 24px, 32px, $black);
+        }
+        .blog-detail_img{
+            img{
+                width: 100%;
+                height: 392px;
+                object-fit: cover;
+            }
+        }
+        .blog-detail_date{
+            padding: $p12 0;
+            @include myfont($SF_Pro, normal, 500, 16px, 24px, $gray900);
+        }
+        .blog-detail_text{
+            @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+        }
+    }
+    .other-blogs_title{
+        padding-top: 72px;
+        padding-bottom: $p24;
+        @include flex-box(space-between,center);
+        h5{
+            @include myfont($SF_Pro, normal, 600, 24px, 32px, $black);
+        }
+        a{
+            @include myfont($SF_Pro, normal, 400, 14px, 24px, $main_green);
+        }
+    }
+}

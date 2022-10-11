@@ -1,0 +1,77 @@
+// fonts
+$sf_pro: SF Pro Display;
+
+// font sizes
+$p-font-sizes: (
+        null  : 14px,
+        576px : 12px,
+        768px : 13px,
+        992px: 14px,
+        1200px: 16px
+);
+
+// $block-width: (
+//         null  : 14px,
+//         576px : 12px,
+//         768px : 13px,
+//         992px: 14px,
+//         1200px: 1112px
+// );
+
+// Colors
+$main_green:#73B5A1;
+$dark_green:#549480;
+$light_green:#D8E3A4;
+$soft_red:#DF3A4C;
+$primary_red:#EC191E;
+$black:#2D3131;
+$gray:#ACB3B8;
+$gray100:#F3F5F8;
+$gray200:#E8ECF1;
+$gray300:#E4E8EE;
+$gray400:#DEE2E8;
+$gray500:#BDC3C7;
+$gray600:#ACB3B8;
+$gray800:#849097;
+$gray900:#586268;
+$blue:#3AC1EE;
+$white:#fff;
+
+.t-red{
+   color: #EC191E;
+}
+.soft-red{
+   color: $soft_red !important;
+}
+.t-green{
+   color: #73B5A1;
+}
+
+// Paddings
+$p4: 4px;
+$p8: 8px;
+$p12: 12px;
+$p16: 16px;
+$p20: 20px;
+$p22: 22px;
+$p24: 24px;
+$p28: 28px;
+$p32: 32px;
+$p36: 36px;
+$p40: 40px;
+$p44: 44px;
+$p48: 48px;
+$p52: 52px;
+$p56: 56px;
+$p72: 72px;
+
+// border radius
+$bradius-none:0;
+$bradius-default:6px;
+$bradius-md:12px;
+$bradius-lg:32px;
+$bradius-circle:100%;
+
+// fonts
+
+$SF-Pro : "SF-Pro-Display-Regular", sans-serif;

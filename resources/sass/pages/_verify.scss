@@ -1,0 +1,427 @@
+.verify-section{
+    align-items: flex-start;
+    @include grid-box(repeat(auto-fill, minmax(350px,1fr)),dense, 24px);
+    .verify-left_side{
+        grid-column: span 2;
+        padding: $p56 0 0 0;
+        form{
+            padding: 0;
+        }
+        .personal-info{
+            position: relative;
+            padding: 0 0 $p56 $p56;
+            border-left: 2px dashed #D4D4D4;
+            @include sm-screen{
+                padding: 0;
+                padding-top: $p16;
+                border: 0;
+            }
+            h5{
+                padding-bottom: $p24;
+                @include myfont($SF_Pro, normal, 600, 20px, 32px, $black);
+            }
+            .personal-blank{
+                @include grid-box(repeat(auto-fill, minmax(350px,1fr)),dense, 24px);
+                .personal-info_field{
+                    flex-direction: column;
+                    @include flex-box(initial, normal);
+                    label{
+                        padding-bottom: $p8;
+                        @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+                    }
+                    input,select,textarea{
+                        outline: none;
+                        padding: $p12 $p16;
+                        @include border(1px solid #BDC3C7, 4px);
+                        @include myfont($SF_Pro, normal, 400, 16px, 24px, $gray600);
+                    }
+                    ::placeholder{
+                        color: $gray600;
+                    }
+                    .choose-adress{
+                        width: 100%;
+                        display: none;
+                        flex-direction:column;
+                        transition: .3s ease-in-out;-webkit-animation-name: fadeIn; /* Fade in the background */
+                        -webkit-animation-duration: 0.4s;
+                        animation-name: fadeIn;
+                        animation-duration: 0.4s
+                    }
+                    @include sm-screen{
+                        width: 100%;
+                    }
+                }
+                .text-address{
+                    grid-column: span 2;
+                }
+                .select-city,.text-field,.choose-option,.choose-delivery,.buy-option{
+                    grid-column: span 2;
+                }
+                .select-city{
+                    -webkit-animation-name: fadeIn; /* Fade in the background */
+                    -webkit-animation-duration: 0.4s;
+                    animation-name: fadeIn;
+                    animation-duration: 0.4s;
+                    input{
+                        width: 100%;
+                        outline: none;
+                        padding: $p12 $p16;
+                        @include border(1px solid #BDC3C7, 4px);
+                        @include myfont($SF_Pro, normal, 400, 16px, 24px, $gray600);
+                    }
+                    label{
+                        padding-bottom: $p8;
+                        @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+                    }
+                }
+                button{
+                    padding: $p20 $p16;
+                    background-color: transparent;
+                    @include flex-box(initial, center);
+                    @include border(1px solid #BDC3C7,8px);
+                    img{
+                        padding-right: $p8;
+                        border-right: 1px solid #DEE2E8;
+                    }
+                    p{
+                        padding-left: $p8;
+                    }
+                }
+                .choose-option{
+                    @include flex-box(space-between,normal);
+                    .option{
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        padding-left: 38px;
+                        cursor: pointer;
+                        input{
+                            //display: none;
+                            position: absolute;
+                            opacity: 0;
+                            left: 0;
+                            z-index: 7;
+                            width: 100%;
+                            height: 28px;
+                        }
+                        .checkmark{
+                            position: absolute;
+                            left: 0;
+                            height: 28px;
+                            width: 28px;
+                            border: 2px solid $main_green;
+                            border-radius: 100%;
+                            background-color: #fff;
+                            @include flex-box(center,center);
+                            svg{
+                                color: $white;
+                            }
+                        }
+                        input:checked ~ .checkmark {
+                            background-color: $main_green;
+                        }
+                        input:checked ~ .checkmark:after {
+                            display: block;
+                        }
+                        @include sm-screen{
+                            width: 100%;
+                            margin-bottom: $p32;
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    @include sm-screen{
+                        flex-wrap: wrap;
+                    }
+                }
+                .choose-delivery{
+                    grid-gap: 24px;
+                    position: relative;
+                    padding-bottom: $p24;
+                    @include flex-box(space-between,normal);
+                    @include sm-screen{
+                        flex-wrap: wrap;
+                        padding-bottom: 0;
+                    }
+                    .select-button{
+                        width: 100%;
+                        padding: $p20;
+                        cursor: pointer;
+                        @include flex-box(initial, center);
+                        @include border(2px solid $gray500, 8px);
+                        input{
+                            display: none;
+                        }
+                        img{
+                            padding-right: $p12;
+                            border-right: 1px solid $gray400;
+                        }
+                        p{
+                            padding-left: $p8;
+                        }
+                        svg{
+                            display: none;
+                        }
+                        @include sm-screen{
+                            width: 100%;
+                        }
+                    }
+                }
+                .buy-option{
+                    transition: .3s ease-in-out;-webkit-animation-name: fadeIn; /* Fade in the background */
+                    -webkit-animation-duration: 0.4s;
+                    animation-name: fadeIn;
+                    animation-duration: 0.4s;
+                    .buy-option_title{
+                        padding-bottom: $p20;
+                        @include myfont($SF_Pro, normal, 400, 16px, 24px, $black);
+                    }
+                    .select-button{
+                        justify-content: center;
+                    }
+                    .buy-option_monthes{
+                        .option-monthes_choice{
+                            .installment-choices{
+                                padding: $p12;
+                                background-color: $gray100;
+                                border-bottom: 1px solid $gray200;
+                                border-top-left-radius: 8px;
+                                border-top-right-radius: 8px;
+                                @include flex-box(space-between,center);
+                                h6{
+                                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray800);
+                                }
+                                .installment-period,.installment-month_payment,.installment-full_price{
+                                    width: 100%;
+                                }
+                                .installment-space{
+                                    width: 5%;
+                                }
+                            }
+                            .installment-credit{
+                                border: 1px solid $gray200;
+                                .installment-details{
+                                    cursor: pointer;
+                                    border-bottom: 1px solid $gray200;
+                                    @include flex-box(space-between,center);
+                                    .installment-info{
+                                        width: 100%;
+                                        padding: $p12;
+                                        h6{
+                                            @include myfont($SF_Pro, normal, 400, 16px, 24px, $black);
+                                        }
+                                        &:last-child{
+                                            width: 5%;
+                                        }
+                                    }
+                                    input{
+                                        display: none;
+                                    }
+                                    .checkmark{
+                                        cursor: pointer;
+                                        width: 20px;
+                                        height: 20px;
+                                        border: 2px solid $main_green;
+                                        border-radius: 100%;
+                                        background-color: #fff;
+                                        @include flex-box(center,center);
+                                        svg{
+                                            width: 0.675em;
+                                            color: $white;
+                                        }
+                                    }
+                                    input:checked ~ .checkmark {
+                                        background-color: $main_green;
+                                    }
+                                    input:checked ~ .checkmark:after {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @include sm-screen{
+                    display:flex;
+                    flex-wrap: wrap;
+                }
+            }
+            &:last-child{
+                border: none;
+            }
+        }
+        .personal-agreement{
+            margin: $p72 0;
+            @include flex-box(space-between,center);
+            .agreement{
+                @include flex-box(initial,center);
+                input{
+                    width: 24px;
+                    height: 24px;
+                    outline: none;
+                    border: 1px solid #E4E8EE;
+                    accent-color: #4f917d;
+                }
+                p{
+                    margin-left: $p8;
+                    border-bottom: 1px solid $gray900;
+                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray900);
+                }
+            }
+            .agreement-buttons{
+                .cancel-process{
+                    margin-right: $p16;
+                    padding: $p12 $p52;
+                    color: $main_green;
+                    background-color: transparent;
+                    @include border(1px solid $main_green,4px);
+                }
+                .continue-process{
+                    padding: $p12 $p52;
+                    color: $white;
+                    background-color: $main_green;
+                    @include border(1px solid $main_green,4px);
+                }
+            }
+        }
+        button{
+            svg{
+                display: none;
+            }
+        }
+        .personal-info_icon{
+            width: 44px;
+            height: 44px;
+            padding: $p8;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            left: -2.5%;
+            background-color: #D4D4D4;
+            @include flex-box(center,center);
+            img{
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+    .verify-right_side{
+        height: 100%;
+        position: relative;
+        .verify-right_side-products{
+            top: 0;
+            position: sticky;
+            padding: $p20 0;
+            margin: $p56 0 0 0;
+            border-radius: 6px;
+            background-color: $gray100;
+            h4{
+                padding-right: $p28;
+                padding-left: $p28;
+                @include myfont($SF_Pro, normal, 500, 28px, 32px, $black);
+            }
+            .verified-products{
+                padding-top: $p12;
+                padding-right: $p28;
+                padding-left: $p28;
+                max-height: 528px;
+                overflow-y: scroll;
+                .verified-product{
+                    padding: $p28 0 $p20 0;
+                    border-bottom: 1px solid $white;
+                    @include flex-box(space-between, flex-start);
+                    .verified-product_img{
+                        @include flex-box(initial, flex-start);
+                        img{
+                            width: 80px;
+                            height: 80px;
+                            object-fit: contain;
+                        }
+                        .verified-product_info{
+                            padding-left: $p8;
+                            .amount_price{
+                                padding-top: $p20;
+                                @include flex-box(space-between, center);
+                                .amount{
+                                    padding: 0 $p8;
+                                }
+                            }
+                        }
+                    }
+                    .drop-product{
+                        padding: $p8;
+                        background-color: white;
+                        @include border(none, 4px);
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                            color: #1E293B;
+                        }
+                    }
+                }
+                &::-webkit-scrollbar{
+                    border-radius: 4px;
+                    left: 10px;
+                    width: 4px;
+                    background-color: #E2E8F0;
+                }
+                &::-webkit-scrollbar-thumb{
+                    border-radius: 4px;
+                    padding: 0 0 0 15px;
+                    background-clip: padding-box;
+                    background: #94A3B8;
+                }
+            }
+            .verified-products_prices{
+                padding:$p24 $p28 $p16 $p28;
+                border-bottom: 1px solid $white;
+                .total-prices{
+                    padding-bottom: $p16;
+                }
+                .total-prices,.discount-prices{
+                    @include flex-box(space-between,center);
+                }
+                h6{
+                    @include myfont($SF_Pro, normal, 400, 16px, 24px, $gray900);
+                }
+                p{
+                    @include myfont($SF_Pro, normal, 600, 16px, 24px, $black);
+                }
+            }
+            .verified-products_total-price{
+                padding: $p12 $p28 $p20 $p28;
+                @include flex-box(space-between,center);
+                h5{
+                    font-size: 20px !important;
+                    font-weight: 400 !important;
+                }
+                h4{
+                    padding: 0;
+                }
+                h4,h5{
+                    @include myfont($SF_Pro, normal, 600, 24px,32px, $black);
+                }
+            }
+            .verified-rules{
+                padding:$p12 $p28 $p20;
+                p{
+                    text-align: center;
+                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+                }
+                a{
+                    color: $black;
+                    text-decoration:underline;
+                }
+                button{
+                    margin-top: $p12;
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+            @include sm-screen{
+                margin: 0;
+            }
+        }
+    }
+}

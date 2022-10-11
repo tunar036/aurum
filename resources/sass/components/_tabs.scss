@@ -1,0 +1,16 @@
+.goods-tabs{
+    @include flex-box(initial,center);
+    .goods-tab{
+        cursor: pointer;
+        @include myfont($SF_Pro, normal, 600, 28px, 48px, $gray500);
+        @include sm-screen{
+            @include myfont($SF_Pro, normal, 600, 20px, 32px, $gray500);
+        }
+        &:nth-child(2n){
+            margin-left: $p24;
+        }
+    }
+    .active-tab{
+        color: $main_green;
+    }
+}

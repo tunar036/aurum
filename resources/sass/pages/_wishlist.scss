@@ -1,0 +1,87 @@
+#favourite-count{
+    margin: $p32 0;
+    .favourite-num_section{
+        padding: $p12 $p24;
+        border-radius: 6px;
+        background-color: $gray100;
+        @include flex-box(space-between, center);
+        .favourite-count_num,.favourite-to_basket{
+            @include flex-box(initial, center);
+            p{
+                @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray900);
+                padding-right: $p8;
+            }
+            span{
+                color: $black;
+            }
+            img{
+                width: 20px;
+                height: 16px;
+            }
+        }
+    }
+}
+#all-favourites{
+    .favourite-product{
+        padding: $p36;
+        border-bottom:1px solid #E2E8F0;
+        @include flex-box(initial, normal);
+        &:last-child{
+            border-bottom: 0;
+        }
+        .favourite-img{
+            img{
+                width: 172px;
+                height: 172px;
+                object-fit: contain;
+            }
+        }
+        .favourite-info{
+            width: 100%;
+            padding-left:$p24;
+            @include flex-box(space-between, center);
+            .favourite-name{
+                .favourite-brand{
+                    @include myfont($SF_Pro, normal, 400, 14px, 20px, #475569);
+                }
+                .favourite-title{
+                    @include myfont($SF_Pro, normal, 600, 20px, 32px, $black);
+                }
+                .favourite-badges{
+                    display: flex;
+                    grid-gap: 12px;
+                    margin-top: $p12;
+                }
+            }
+            .favourite-price{
+                height: 100%;
+                flex-direction: column;
+                @include flex-box(space-between, normal);
+                .favourite-cash{
+                    @include flex-box(space-between,center);
+                    h4{
+                        padding-right:$p20;
+                        @include myfont($SF_Pro, normal, 600, 24px, 32px, $black);
+                    }
+                    .favourite-discount_price{
+                        padding-right: $p20;
+                        text-decoration:line-through;
+                        @include myfont($SF_Pro, normal, 400, 16px, 20px, $gray900);
+                    }
+                    .like-favourite{
+                        width: 40px;
+                        height: 40px;
+                        @include flex-box(center,center);
+                        @include border(1px solid $gray300, 100%);
+                    }
+                }
+                .buy-offer{
+                    @include flex-box(center,center);   
+                    p{
+                        padding-right: $p8;
+                    }
+                }
+            }
+        }
+    }
+}

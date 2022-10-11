@@ -1,0 +1,10 @@
+.product-count_change{
+    @include flex-box(initial, center);
+    button{
+        font-size: 20px;
+        color: #515151;
+        padding: $p4 10px;
+        background-color: $white;
+        @include border(none, 4px);
+    }
+}

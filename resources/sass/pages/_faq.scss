@@ -1,0 +1,35 @@
+#faq{
+    @include flex-box(center,center);
+    .faq-section{
+        width: 872px;
+        max-width:872px;
+        .faq{
+            .faq-question{
+                cursor: pointer;
+                padding: $p20 $p32;
+                border: 1px solid #DEE2E8;
+                @include flex-box(space-between,center);
+                h6{
+                    @include myfont($SF_Pro, normal, 600, 16px, 24px, $black);
+                }
+                svg{
+                    font-size: 24px;
+                    transition: transform .8s ease-in-out;  
+                }
+            }
+            .faq-answer{
+                display: none;
+                border-top: none;
+                padding: $p24 $p32;
+                -webkit-animation-name: fadeIn; /* Fade in the background */
+                -webkit-animation-duration: 0.4s;
+                animation-name: fadeIn;
+                animation-duration: 0.4s;
+                border: 1px solid #DEE2E8;
+                p{
+                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray900);
+                }
+            }
+        }
+    }
+}

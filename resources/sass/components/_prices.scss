@@ -1,0 +1,11 @@
+.detail-price{
+    @include flex-box(initial, center);
+    .detail-price_current{
+        @include myfont($SF_Pro, normal, 600, 28px, 36px, $soft_red);
+    }
+    .detail-price_discount{
+        padding-left: $p12;
+        text-decoration: line-through;
+        @include myfont($SF_Pro, normal, 500, 16px, 20px, $gray900);
+    }
+}

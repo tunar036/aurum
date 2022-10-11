@@ -1,0 +1,15 @@
+.pagination{
+    margin-top: $p56        ;
+    justify-content: center;
+    .page-link{
+        color: $black;
+        border: none !important;
+    }
+    .active{
+        .page-link{
+            color: $white !important;
+            border-radius: 3px !important;
+            background-color: #73B5A180 !important;
+        }
+    }
+}

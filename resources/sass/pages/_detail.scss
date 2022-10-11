@@ -1,0 +1,292 @@
+#detail{
+    padding: $p32 0 0 0;
+    .detail-section{
+        @include grid-box(repeat(auto-fill, minmax(500px,1fr)),dense, 24px);
+        @include sm-screen{
+            display:flex;
+            flex-direction: column;
+        }
+    }
+    .detail-gallery{
+        position: relative;
+        .detail-images{
+            display: flex;
+            position: sticky;
+            top: 0;
+            @include sm-screen{
+                flex-direction: column-reverse;
+            };
+            .mySwipernav{
+                width: 55%;
+                .swiper-slide{
+                    margin-bottom: $p16;
+                }
+            }
+            .swiper{
+                height: 570px;
+                @include sm-screen{
+                    width: 100%;
+                    height: 100%;
+                };
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            .mySwipernav{
+                .swiper-wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    @include sm-screen{
+                        flex-direction: row;    
+                        justify-content: center;
+                    };
+                    .swiper-slide{
+                        width: 90px !important;
+                        height: 90px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .detail-title{
+        @include flex-box(space-between, center);
+        @include sm-screen{
+            flex-wrap: wrap;
+        }
+        .detail-name{
+            @include myfont($SF_Pro, normal, 600, 28px, 44px, $black);
+        }
+        .detail-functions{
+            @include flex-box(initial, center);
+            button{
+                display: flex;
+                padding: 10px $p8;
+                margin-right: $p12;
+                align-items: center;
+                background-color: transparent;
+                @include border(1px solid $gray300,6px);
+                @include myfont($SF_Pro, normal, 400, 14px, 20px, $gray900);
+                img{
+                    padding-left: $p8;
+                }
+                svg{
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    .product-advantages{
+        display: flex;
+        grid-gap:12px;
+        margin-top:$p12;
+    }
+    .detail-price{
+        padding-top: $p8;
+    }
+    .detail-colors{
+        padding: $p16 0 18px 0;
+        @include flex-box(initial, center);
+        h6{
+            @include myfont($SF_Pro, normal, 400, 16px, 24px, $black);
+        }
+        .detail-colors_choice{
+            padding-left: $p12;
+            input{
+                display: none;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .checkmark{
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            @include flex-box(center,center);
+            svg{
+                opacity: 0;
+                width: 0.675em;
+                color: $white;
+            }
+        }
+        input:checked ~ .checkmark {
+            background-color: $main_green;
+            svg{
+               opacity: 1;
+            }
+        }
+        input:checked ~ .checkmark:after {
+            display: block;
+        }
+        @include sm-screen{
+            padding: 0;
+        }
+    }
+    .detail-params{
+        @include flex-box(initial, center);
+        h6{
+            @include myfont($SF_Pro, normal, 400, 16px, 24px, $black);
+        }
+        .all-params{
+            padding-left: $p12;
+            button{
+                outline: none;
+                padding: $p8 $p12;
+                background: white;
+                @include border(1px solid #BDC3C7, 4px);
+                @include myfont($SF_Pro, normal, 400, 14px, 20px, $black);
+            }
+        }
+    }
+    .detail-buttons{
+        padding: $p24 0 $p12 0;
+        @include flex-box(initial,center);
+        button,a{
+            padding: $p12 $p32;
+            @include border(none, 6px);
+            @include flex-box(initial,center);
+            @include myfont($SF_Pro, normal, 400, 16px, 24px, $white);
+            img{
+                padding-right: $p12;
+            }
+        }
+        .detail-buy{
+            margin-right: $p12;
+            background-color: #F6861F;
+        }
+        .detail-add{
+            background-color: $main_green;
+        }
+    }
+    .detail-note{
+        h6{
+            color: #64748B;
+        }
+    }
+    .detail-calculator{
+        margin-top: $p16;
+        align-items: center;
+        @include grid-box(repeat(auto-fill, minmax(200px,1fr)),dense, 0px);
+        .calculator{
+            border-radius: 8px;
+            padding: $p16 $p20;
+            grid-column: span 2;
+            background-color: #F3F5F8;
+            .calculator-monthes{
+                padding-top: $p20;
+                @include grid-box(repeat(auto-fill, minmax(70px,1fr)),dense, 0px);
+                .calculator-month{
+                    cursor: pointer;
+                    text-align: center;
+                    padding-bottom: $p12;
+                    border-bottom: 3px solid #E2E8F0;
+                    @include myfont($SF_Pro, normal, 500, 16px, 24px, #64748B);
+                    @include sm-screen{
+                        width: 100%;
+                    }
+                }
+                @include sm-screen{
+                    display: flex;
+                }
+            }
+            .initial-calculator{
+                .initial-price{
+                    padding-top: $p28;
+                    @include flex-box(space-between,center);
+                    input{
+                        width: 98px;
+                        border: none;
+                        border-radius: 4px;
+                        padding: $p4 $p12;
+                        outline: none !important;
+                    }
+                }
+                #range-input{
+                    width: 100%;
+                    margin-top: $p24;
+                    background: #E2E8F0;
+                    accent-color: #47937c;
+                    outline: none !important;
+                }
+            }
+        }
+        .calculator-price{
+            text-align: center;
+            h6{
+                @include myfont($SF_Pro, normal, 400, 16px, 24px, $gray900);
+            }
+            h5{
+                @include myfont($SF_Pro, normal, 500, 24px, 32px, $black);
+            }
+            @include sm-screen{
+                flex-wrap: wrap;
+                grid-column: span 2;
+                @include flex-box(center, center);
+            }
+            .monthly-fee{
+                @include sm-screen{
+                    width: 50%;
+                }
+            }
+            .full-fee{
+                padding: $p16 0;
+                @include sm-screen{
+                    width: 50%;
+                }
+            }
+            .send-request{
+                padding: $p8 $p36;
+                border-radius: 7px;
+                background-color: $blue;
+                @include myfont($SF_Pro, normal, 400, 16px, 24px, $white);
+                @include sm-screen{
+                    width: 100%;
+                }
+            }
+        }
+        h6{
+            @include myfont($SF_Pro, normal, 500, 14px, 24px, $gray900);
+        }
+    }
+    .detail-table{
+        margin-top: $p36;
+        table{
+            margin-top: $p12;
+            width: 100%;
+        }
+        .table-tabs{
+            padding-bottom: $p12;
+            @include sm-screen{
+                display: flex;
+            }
+        }
+        .table-tab{
+            @include myfont($SF_Pro, normal, 600, 28px, 44px, $gray500);
+            &:nth-child(2n){
+                padding: 0 $p24;
+            }
+            @include xs-screen{
+                font-size: 24px;
+            }
+        }
+        .active-table{
+            @include myfont($SF_Pro, normal, 600, 28px, 44px, $black);
+            @include xs-screen{
+                font-size: 24px;
+            }
+        }
+        .about-detail{
+            padding-top: 14px;
+            text-align: justify;
+            border-top:2px solid $gray100;
+            @include myfont($SF_Pro, normal, 400, 14px, 20px, $black);
+        }
+    }
+}

@@ -1,0 +1,157 @@
+.product{
+    padding: 28px 22px 24px 22px;
+    position: relative !important;
+    overflow-y: hidden;
+    border-radius: 6px;
+    border: 1px solid white;
+    // border-bottom:0 !important;
+    &:hover{
+        overflow-y: initial !important;
+        border: 1px solid #E4E8EE !important;
+        // border-bottom-left-radius: 0px;
+        // border-bottom-right-radius: 0px;
+    }
+    .product-img{
+        padding: $p8 0 0px 0 !important;
+        img{
+            display: flex;
+            margin: auto;
+            width: 100%;
+            height: 188px;
+            object-fit: contain;
+        }
+        .carousel-indicators{
+            display: flex;
+            grid-gap: 8px;
+            // @include sm-screen{
+            //     @include grid-box(repeat(auto-fill, minmax(50px,1fr)),dense, 8px);
+            // }
+            // @include xs-screen{
+            //     @include grid-box(repeat(auto-fill, minmax(80px,1fr)),dense, 8px);
+            // }
+            // @include xxs-screen{
+            //     @include grid-box(repeat(auto-fill, minmax(70px,1fr)),dense, 8px);
+            // }
+            // @include s-screen{
+            //     @include grid-box(repeat(auto-fill, minmax(60px,1fr)),dense, 8px);
+            // }
+            position: relative;
+            margin: 0;
+            .active{
+                background-color: $main_green !important;
+            }
+        }
+        .carousel-indicators [data-bs-target]{
+            margin: 16px 0;
+            width: 100%;
+            height: 1px;
+            background-color: $gray400;
+        }
+    }
+    .product-params{
+        width: 100%;
+        height: 24px;
+        position: relative;
+        @include flex-box(initial,center);
+        .new-product{
+            border-radius: 30px;
+            padding: $p4 $p12;
+            background-color: $primary_red;
+            color: $white;
+            @include myfont($SF_Pro, normal, 500, 14px, 16px, $white);
+        }
+        .favourite-product{ 
+            display: flex;
+            position: absolute;
+            right: 0;
+            align-items: center;
+            padding: $p8;
+            background-color: transparent;
+            @include border(1px solid $gray300, 100px);
+            svg{
+                display: none;
+                color: $gray900;
+            }
+        }
+    }
+    .product-name_block{
+        height: 37px;
+        .product-name{
+            @include myfont($SF_Pro, normal, 600, 14px, 20px, $black);
+        }
+    }
+    .product-advantages{
+        padding: $p12 0 $p4 0;
+        @include grid-box(repeat(auto-fill, minmax(80px,1fr)),dense, 5px);
+        @include sm-screen{
+            @include grid-box(repeat(auto-fill, minmax(100px,1fr)),dense, 5px);
+        }
+        @include xs-screen{
+            @include grid-box(repeat(auto-fill, minmax(150px,1fr)),dense, 5px);
+        }
+        .badge-item{
+            padding: 4px 0;
+            &:nth-child(n+3){
+                display: none;
+            }
+        }
+    }
+    .product-prices{
+        padding-top: 16px;
+        @include flex-box(space-between, normal);
+        .prices{
+            padding: 0;
+        }
+        .price{
+            color: $primary_red;
+        }
+        .add-product{
+            button{
+                padding: $p8 $p8;
+                @include border(1px solid $gray200, 6px);
+                background-color: transparent;
+                &:nth-child(2){
+                    padding: 7px 11px;
+                }
+            }
+        }
+    }
+    .product-delivery{
+        padding: $p20 0 0 0;
+        @include myfont($SF_Pro, normal, 400, 12px, 20px, $gray900);
+    }
+    .product-info{
+        display: none;
+        padding: 12px 0px 0px 0px;
+        // border: 1px solid #E4E8EE;
+        // border-bottom-left-radius: 6px;
+        // border-bottom-right-radius: 6px;
+        border-top: none;
+        transition: opacity 600ms, visibility 600ms;
+        background-color: white;
+        width: 100%;
+        // position: absolute;
+        // left: 0;
+        opacity: 0;
+        z-index: 10000000;
+        visibility: hidden;
+        ul{
+            border-top: 1px solid #E4E8EE;
+            padding: $p12 0 $p16 0;
+            list-style: inside;
+            li{
+                @include myfont($SF_Pro, normal, 400, 12px, 20px, $gray900);
+            }
+        }
+        button{
+            width: 100%;
+            justify-content: center;
+            @include myfont($SF_Pro, normal, 500, 14px, 24px, $white);
+        }
+    }
+}
+
+@keyframes fade {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}

@@ -1,0 +1,274 @@
+#categories{
+    .sort-section{
+        border-radius: 6px;
+        padding: $p12 $p20;
+        margin-bottom: $p16;
+        background-color: $gray100;
+        @include flex-box(space-between,center);
+        .sort,.product-amount{
+            @include flex-box(initial,center);
+        }
+        p{
+            @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray900);
+        }
+        select,span{
+            @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+            border: none;
+            outline: none;
+            margin-left: $p8;
+            background-color: transparent;
+        }
+    }
+    .categorised-products{
+        @include grid-box(repeat(auto-fill, minmax(250px,1fr)),dense, 24px);
+        .mobile-filter{
+            display: none;
+            width: 100%;
+            padding: $p12 0;
+            @include border(1px solid #DEE2E8,5px);
+            p{
+                padding-left: 10px;
+            }
+        }
+        .filter{
+            padding: 0 15px;
+            border-radius: 6px;
+            background-color: $gray100;
+            .filter-category{
+                padding-bottom: $p16;
+                border-bottom: 1px solid #E4E8EE;
+                .filter-title{
+                    padding-top: $p24;
+                    padding-bottom: $p16;
+                    @include flex-box(space-between,center);
+                    @include myfont($SF_Pro, normal, 800, 20px, 32px, $black);
+                    .minus{
+                        display: none;
+                        cursor: pointer;
+                    }
+                    .plus{
+                        display: none;
+                        width: 20px;
+                        height: 20px;
+                        cursor: pointer;
+                    }
+                }
+                .range-form{
+                    button{
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+                .filter-categories{
+                    display: flex;
+                    max-height: 180px;
+                    overflow-y: scroll;
+                    flex-direction: column;
+                    .category-link{
+                        margin-bottom: $p16;
+                        transition: .2s ease-in-out;
+                        @include myfont($SF_Pro, normal, 400, 14px, 20px, $gray900);
+                        &:hover{
+                            color: $main_green;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                #filterCategories::-webkit-scrollbar{
+                    border-radius: 4px;
+                    left: 10px;
+                    width: 4px;
+                    background-color: #E2E8F0;
+                }
+                #filterCategories::-webkit-scrollbar-thumb{
+                    border-radius: 4px;
+                    padding: 0 0 0 15px;
+                    background-clip: padding-box;
+                    background: #94A3B8;
+                }
+                &:last-child{
+                    border-bottom: 0;
+                }
+            }
+        }
+        .filter-wrap {
+            grid-column:span 3;
+           .filter-products{
+               @include grid-box(repeat(auto-fill, minmax(200px,1fr)),dense, 0px);
+           }
+           .product{
+               border: 1px solid $white;
+           }
+       }
+        .price-inputs{
+            form{
+                @include flex-box(space-between,center);
+                .min-price{
+                    width: 50px;
+                    outline: none;
+                    padding: $p4 $p12;
+                    @include border(1px solid $gray300, 4px);
+                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+                }
+                .max-price{
+                    width: 128px;
+                    outline: none;
+                    padding: $p4 $p12;
+                    @include border(1px solid $gray300, 4px);
+                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+                }
+            }
+        }
+        .brand-search{
+            display: none;
+            flex-direction: column;
+            .brand-search_form{
+                position: relative;
+                input{
+                @include flex-box(space-between,center);
+                    width: 100%;
+                    outline: none;
+                    padding: $p8 $p16;
+                    margin-bottom:$p28;
+                    @include border(1px solid $gray300, 4px);
+                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray600);
+                }
+                ::placeholder{
+                    color: $gray600;
+                }
+                #search-icon{
+                    margin: 4px 1px;
+                    padding: $p8 $p16;
+                    position: absolute;
+                    border: none;
+                    outline: 0;
+                    top: 0;
+                    right: 0;
+                    background-color: $white;
+                }
+            }
+            .check-category{
+                display: flex;
+                flex-direction: column;
+                height: 200px;
+                overflow-y: scroll;
+                .brand-choice{
+                    cursor: pointer;
+                    margin-bottom: $p20;
+                    @include flex-box(initial,center);
+                    input{
+                        margin-right: $p8;
+                        display: none;
+                        cursor: pointer;
+                        &:focus{
+                            appearance: auto;
+                            -webkit-appearance: auto;
+                        }
+                    }
+                    input[type="checkbox"]:checked + label::after {
+                        content: '';
+                        position: absolute;
+                        width: 10px;
+                        height: 4px;
+                        background: rgba(0, 0, 0, 0);
+                        top: 0.8ex;
+                        left: 0.5ex;
+                        border: 2px solid $main_green;
+                        border-top: none;
+                        border-right: none;
+                        appearance: none;
+                        vertical-align: middle;
+                        outline: none;
+                        -webkit-appearance: none;
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        -o-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                    }
+                    input[type="checkbox"]:checked + label{
+                        color: $black !important;
+                    }
+                    input[type="checkbox"] + label {
+                        position: relative;
+                        overflow: hidden;
+                        cursor: pointer;
+                        font-size: 14px;
+                        color: $gray900;
+                    }
+                    input[type="checkbox"] + label::before {
+                        content: "";
+                        display: inline-block;
+                        vertical-align: -25%;
+                        width: 16px;
+                        height: 16px;
+                        background-color: white;
+                        border: 1px solid #E4E8EE;
+                        border-radius: 2px;
+                        margin-right: 0.5em;
+                    }
+                    p{
+                        @include myfont($SF_Pro, normal, 400, 14px, 24px, $black);
+                    }
+                    &:last-child input{
+                        margin-bottom: 0;
+                    }
+                }
+                &::-webkit-scrollbar{
+                    border-radius: 4px;
+                    left: 10px;
+                    width: 4px;
+                    background-color: #E2E8F0;
+                }
+                &::-webkit-scrollbar-thumb{
+                    border-radius: 4px;
+                    padding: 0 0 0 15px;
+                    background-clip: padding-box;
+                    background: #94A3B8;
+                }
+            }
+            .radio-category{
+                @include grid-box(repeat(auto-fill, minmax(50px,1fr)),dense, 20px);
+                .brand-choice{
+                    @include flex-box(initial,center);
+                    flex-direction: column;
+                }
+                input{
+                    width: 20px;
+                    height: 20px;
+                    border: none !important;
+                    accent-color: #EADECF;
+                }
+                p{
+                    padding-top: $p8;
+                    @include myfont($SF_Pro, normal, 500, 10px, 12px, $black);
+                }
+            }
+        }
+    }
+}
+@media(max-width:1024px){
+    .categorised-products{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    }
+}
+@media(max-width:991px){
+    .categorised-products{
+        display: flex !important;
+        flex-direction: column;
+    }
+    .mobile-filter{
+        display: flex !important;
+        @include flex-box(center,center) ;
+    }
+    .filter{
+        transition: .2s ease-in-out;
+        position: absolute;
+        top: 0;
+        z-index: 4;
+        border-radius: 0 !important;
+        left: -100%;
+        width: 90%;
+        height: 100%;
+    }
+}

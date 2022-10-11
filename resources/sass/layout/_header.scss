@@ -1,0 +1,330 @@
+// Top head section
+#head {
+    @include flex-box(initial, center);
+    padding: 12px 0;
+    background-color: $soft_red;
+
+    .head-text {
+        width: 100%;
+        @include flex-box(center, center);
+
+        .head-title {
+            @include flex-box(center, center);
+            @include xxs-screen {
+                @include myfont($SF-Pro, normal, 500, 12px, normal, $white);
+            }
+            @include myfont($SF-Pro, normal, 400, 16px, normal, $white);
+        }
+
+        .more {
+            @include flex-box(center, center);
+            @include sm-screen {
+                display: none;
+            }
+
+            img {
+                padding-left: $p12;
+            }
+
+        }
+    }
+
+    .more-details {
+        margin-left: $p20;
+        @include myfont($SF-Pro, normal, 400, 12px, normal, $white);
+    }
+
+    .head-close {
+        margin-right: $p20;
+        cursor: pointer;
+    }
+}
+
+// Navigation section
+.block {
+    width: 100%;
+    padding: 0 12px;
+    margin-left: auto;
+    margin-right: auto;
+    @include breakpoint('bgdesktop') {
+        max-width: 1298px !important;
+    }
+    @include breakpoint('desktop') {
+        max-width: 1112px;
+    }
+}
+
+#navigation {
+    @include sm-screen {
+        display: none;
+    }
+}
+
+.navigation_section {
+    padding: $p24 0;
+    @include md-screen {
+        padding: 24px 0 0 0;
+    }
+    @include grid-box(repeat(auto-fill, minmax(350px, 1fr)), dense, 0);
+    align-items: center;
+
+    .navigation_section-menu {
+        grid-column: span 2;
+    }
+
+    .navigation_section-tuning {
+        @include flex-box(space-between, center);
+    }
+
+    .tuning_language, .tuning_currency {
+        cursor: pointer;
+        @include flex-box(center, center);
+
+        img {
+            margin-left: 6px;
+        }
+    }
+
+    .tuning_credits {
+        border: none;
+        padding: 8px 16px;
+        background-color: $main_green;
+        @include myfont($SF-Pro, normal, 600, 14px, 20px, $white);
+        border-radius: 6px;
+    }
+
+    .language, .currency {
+        font-size: 14px;
+    }
+}
+
+.menu {
+    @include md-screen {
+        justify-content: space-between;
+        padding-bottom: $p12;
+    }
+
+    .menu_item {
+        @include md-screen {
+            padding: 0;
+        }
+        padding-left: $p24;
+    }
+
+    .menu_item:nth-child(1) {
+        padding-left: 0;
+    }
+
+    .menu_item-link {
+        transition: .2s ease-in-out;
+        @include myfont($SF-Pro, normal, 400, 12px, 20px, $black);
+
+        &:hover {
+            color: $dark_green;
+        }
+    }
+}
+
+// Main header
+#header {
+    margin: $p12 0 0 0;
+    @include sm-screen {
+        margin: $p24 0;
+    }
+}
+
+.main-header {
+    @include md-screen {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @include sm-screen {
+        justify-content: space-between;
+    }
+    @include flex-box(space-between, center);
+
+    .mobile-bar, .mobile-bag {
+        display: none;
+        @include sm-screen {
+            display: block;
+        }
+    }
+
+    .mobile-menu {
+        overflow-y: overlay;
+        width: 100%;
+        height: 100%;
+        transition: .2s ease-in-out;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 5;
+        padding: $p24;
+        background-color: $white;
+
+        .category-block {
+            padding-bottom: $p24;
+        }
+
+        .login {
+            @include flex-box(space-between, center);
+            padding-bottom: $p32;
+
+            a {
+                @include flex-box(initial, center);
+                @include myfont($SF_Pro, normal, 500, 20px, 32px, $gray900);
+
+                img {
+                    margin-right: $p12;
+                }
+            }
+        }
+
+        .mobile-category {
+            p {
+                @include myfont($SF_Pro, normal, 600, 16px, 24px, $black);
+                padding-bottom: $p24;
+            }
+        }
+
+        .mobile-category_item {
+            p {
+                padding-bottom: $p16;
+                @include flex-box(space-between, center);
+                @include myfont($SF_Pro, normal, 500, 16px, 24px, $gray900);
+            }
+        }
+
+        .mobile-subcategories {
+            display: none;
+        }
+
+        .mobile-language {
+            padding: $p16 0;
+            border-radius: 6px;
+            background-color: $gray100;
+            @include flex-box(center, center);
+            @include myfont($SF_Pro, normal, 500, 16px, 24px, $black);
+
+            img {
+                margin-right: $p12;
+            }
+        }
+
+        .select-language {
+            overflow: hidden;
+            position: relative;
+
+            .mobile-languages {
+                transition: .2s ease-in-out;
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+                width: 100%;
+                background-color: $gray100;
+                position: absolute;
+                bottom: -300%;
+                padding: $p12 $p12 $p24 $p12;
+                display: flex;
+                flex-direction: column;
+
+                a {
+                    border-bottom: 1px solid $gray300;
+                    @include myfont($SF_Pro, normal, 500, 16px, 24px, $black);
+                    padding: $p12 0;
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .header_logo {
+        width: 196px;
+        height: 56px;
+        @include md-screen {
+            width: 230px;
+            height: 60px;
+        }
+        @include xs-screen {
+            width: 126px;
+            height: 36px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .mobile-bag {
+        position: relative;
+
+        .count {
+            position: absolute;
+            top: 0;
+            right: -35%;
+            padding: 1px 5px;
+            border-radius: 100px;
+            background-color: $main_green;
+            @include myfont($SF_Pro, normal, 500, 12px, 16px, $white);
+        }
+    }
+
+    .header_menu {
+        @include flex-box(center, center);
+        @include md-screen {
+            width: 100%;
+            padding-top: 30px;
+        }
+        @include sm-screen {
+            display: none;
+        }
+
+        .header_menu-item {
+            color: $black;
+            margin-right: $p32;
+            @include flex-box(initial, center);
+
+            .header_menu-item_icon {
+                position: relative;
+                margin: 0 auto;
+                margin-bottom: 4px;
+                width: 24px;
+                height: 24px;
+            }
+
+            img {
+                padding-right: $p12;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .count {
+                position: absolute;
+                top: -15%;
+                right: -30%;
+                padding: 1px 5px;
+                border-radius: 100px;
+                background-color: $main_green;
+                @include myfont($SF_Pro, normal, 500, 12px, 16px, $white);
+            }
+        }
+    }
+
+    .header_menu-settings {
+        .header_menu-item {
+            @include flex-box(center, center);
+            flex-direction: column;
+
+            img {
+                padding-right: 0;
+                padding-bottom: 4px;
+            }
+        }
+    }
+}

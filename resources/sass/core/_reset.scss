@@ -1,0 +1,221 @@
+//My preferred CSS reset
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+  font-family: $SF-Pro !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+a, a:hover {
+  text-decoration: none;
+}
+footer, header, nav, section, main{
+  display: block;
+}
+
+body{
+  line-height: 1;
+  position: relative;
+  overflow-x: hidden;
+}
+
+ol, ul{
+  list-style: none;
+}
+
+blockquote, q{
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after{
+  content: '';
+  content: none;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input{
+  border-radius: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.more-details{
+  color: $white;
+}
+
+.down-icon{
+  width: 8px;
+  height: 4px;
+}
+
+.l-green{
+  background-color: #D8E3A4;
+  color: $black;
+}
+
+.d-green{
+  background-color: #549480;
+  color:$white;
+}
+
+.blue{
+  background-color:#3AC1EE;
+  color: $white;
+}
+
+.transparent{
+  border: 1px solid #73B5A1;
+  background-color: transparent;
+  color: #73B5A1;
+}
+
+.prices{
+  padding-top: $p16;
+  .discount-price{
+      @include myfont($SF_Pro, normal, 500, 14px, 16px, $gray900);
+      text-decoration:line-through;
+  }
+  .price{
+      padding-top: $p12;
+      @include myfont($SF_Pro, normal, 600, 20px, 16px, $black);
+  }
+}
+
+.container{
+  @include bg-screen{
+    max-width: 100% !important;
+  }
+  @include sm-screen{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.openMenu{
+  left: 0 !important;
+}
+
+.openMobileLanguages{
+  bottom: 0 !important;
+}
+
+// .swiper{
+//   overflow: initial !important;
+// }
+
+.open-product{
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.show-badge,.active-menu{
+  display: block !important;
+}
+
+.active-param{
+  border: 1px solid $main_green !important;
+}
+
+.active-month{
+  border-bottom: 3px solid $main_green !important;
+  @include myfont($SF_Pro, normal, 600 !important, 20px !important, 32px, $black !important);
+}
+
+table {
+  width: 100%;
+  border-top: 1px solid $gray100;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 8px;
+  text-align: left;
+  @include myfont($SF_Pro, normal, 400, 16px, 24px, $black);
+}
+
+tr:nth-child(even) {
+  background-color: $gray100;
+}
+
+.active-button{
+  position: relative;
+  @include border(2px solid $main_green !important, 8px);
+  svg{
+    display: inline-block !important;
+    position: absolute;
+    top: -15%;
+    right:-3%;
+    font-size: 28px;
+    color: $main_green;
+    background-color: $white;
+  }
+}
+
+.actvie-form{
+  background-color: $main_green !important;
+}
+
+.heart-icon{
+  color: $main_green;
+}
+
+.active-like{
+  display: block !important;
+  color: $primary_red;
+}
+
+.active-like2{
+  display: block !important;
+  color: $primary_red !important;
+}
+
+.active-bg{
+  background-color: $main_green;
+  path{
+      fill: $white !important;
+  }
+}
+
+.active-filter{
+  left: 0 !important;
+}
+
+.personal-info_field {
+  .active-field{
+    display: flex !important;
+  }
+}
+
+.brLeft{
+  border-left: 2px dashed $main_green !important;
+}
+
+.active-card{
+  background-color: #73b5a11a;
+  border: 2px solid #73B5A1 !important;
+}
+
+.active-faq{
+  display: block !important;
+}
+
+.rotate{
+  transform: rotate(180deg);
+}

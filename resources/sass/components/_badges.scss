@@ -1,0 +1,15 @@
+.badge-items{
+    grid-gap: 12px;
+    @include flex-box(initial,center);
+}
+.badge-item{
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: SF Pro Display;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+}

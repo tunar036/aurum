@@ -1,0 +1,46 @@
+.error-section{
+    padding: 124px 0;
+    .error{
+        margin:auto;
+        max-width: 648px;
+        border-bottom: 1px solid $main_green;
+        .error-name{
+            text-align: center;
+            @include myfont($SF_Pro, normal, 700, 140px, 160px, $main_green);
+        }
+        .error-text{
+            text-align: center;
+            padding-bottom:$p12;
+            @include myfont($SF_Pro, normal, 600, 28px, 48px, $black);
+        }
+    }
+}
+.vacancies-section{
+    @include grid-box(repeat(auto-fill, minmax(250px,1fr)),dense, 24px);
+    .vacancy{
+        padding: $p24 $p24 $p28 $p20;
+        @include border(1px solid $gray400,4px);
+        .vacancy-name{
+            padding-bottom: $p4;
+            @include myfont($SF_Pro, normal, 600, 24px, 32px, $black);
+        }
+        .vacancy-info{
+            padding-bottom: $p12;
+            @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray800);
+        }
+        .vacancy-more{
+            width: 100%;
+            color: $white;
+            border-radius: 4px;
+            background-color: $main_green;
+            @include flex-box(center,center);
+            a{
+                color: $white;
+                padding: $p12;
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}

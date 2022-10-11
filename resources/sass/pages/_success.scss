@@ -1,0 +1,98 @@
+#success{
+    .success-section{
+        margin-top: $p32;
+        align-items: flex-start;
+        @include grid-box(repeat(auto-fill, minmax(250px,1fr)),dense, 24px);
+        @include sm-screen{
+            flex-wrap: wrap;
+            @include flex-box(space-around,center);
+        };
+        .success-products{
+            grid-column: span 3;
+            @include grid-box(repeat(auto-fill, minmax(200px,1fr)),dense, 0px);
+            @include sm-screen{
+                flex-wrap: wrap;
+                @include flex-box(space-around,center);
+            };
+            .success-product{
+                transition: .2s ease-in-out;
+                @include border(1px solid $white,4px);
+                &:hover{
+                    @include border(1px solid $gray200,4px);
+                }
+                .success-product_img{
+                    padding-top: $p20;
+                    @include flex-box(center,center);
+                    img{
+                        width: 160px;
+                        height: 160px;
+                        object-fit: contain;
+                    }
+                }
+                .success-product_info{
+                    padding: 30px $p16 $p20 $p16;
+                    .success-product_brand{
+                        @include myfont($SF_Pro, normal, 400, 14px, 20px, #475569);
+                    }
+                    .success-product_name{
+                        @include myfont($SF_Pro, normal, 600, 16px, 24px, $black);
+                    }
+                    .success-product_price{
+                        padding-top: $p28;
+                        @include myfont($SF_Pro, normal, 600, 20px, 16px, $black);
+                    }
+                }
+            }
+        }
+        .success-recept{
+            border-radius:6px;
+            background-color: $gray100;
+            @include sm-screen{
+                width: 100%;
+            };
+            .recept-title{
+                padding: $p24;
+                @include myfont($SF_Pro, normal, 600, 24px, 32px, $black);
+            }
+            .recept-list{
+                padding: $p32 $p24 $p56 $p24;
+                .recept-info{
+                    padding-bottom: $p16;
+                    @include flex-box(space-between,center);
+                    .recept-name{
+                        @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray800);
+                    }
+                    .recept-detail{
+                        @include myfont($SF_Pro, normal, 600, 14px, 24px, $black);
+                    }
+                }
+            }
+            .recept-border{
+                border-top: 1px dashed $gray400;
+                @include flex-box(space-between,center);
+                .recept-circle{
+                    width: 32px;
+                    height: 32px;
+                    margin-top: -15px;
+                    border-radius: 100%;
+                    background-color: $white;
+                    &:nth-child(1){
+                        margin-left: -15px;
+                    }
+                    &:nth-child(2){
+                        margin-right: -15px;
+                    }
+                }
+            }
+            .recept-price{
+                padding: $p36 $p24;
+                .recept-price_title{
+                    @include myfont($SF_Pro, normal, 400, 14px, 24px, $gray800);
+                }
+                .recept-price_num{
+                    @include myfont($SF_Pro, normal, 600, 24px, 32px, $black);
+                }
+            }
+        }
+    }
+}

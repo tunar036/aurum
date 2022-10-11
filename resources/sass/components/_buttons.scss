@@ -1,0 +1,50 @@
+.mobile-all{
+    width: 100%;
+    display: none;
+    padding: $p12 0;
+    margin-bottom: $p32;
+    background-color: transparent;
+    @include border(1px solid $main_green, 4px);
+    @include myfont($SF_Pro, normal, 600, 16px, 24px, $main_green);
+    @include sm-screen{
+        display: block;
+    }
+}
+    
+.buy-offer{
+    width: 100%;
+    @include flex-box(center,center);
+    @include border(none, 4px);
+    padding: $p12 $p28;
+    background-color: $main_green;
+    @include myfont($SF_Pro, normal, 600, 16px, 24px, $white);
+    @include xs-screen{
+        width: 50%;
+        font-size: 14px;
+        padding: $p12 $p16;
+    }
+    img{
+        margin-right: $p12;
+    }
+}
+
+.delete-product{
+    padding: 6px 10px;
+    background-color: transparent;
+    @include border(1px solid $gray300, 100%);
+    svg{
+        color: $gray900;
+    }
+}
+
+.campaign-button{
+    padding: $p12 $p52;
+    color: $main_green;
+    background-color: $white;
+    transition: .2s ease-in-out;
+    @include border(1px solid $main_green, 4px);
+    &:hover{
+        color: $white;
+        background-color: $main_green;
+    }
+}
